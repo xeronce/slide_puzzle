@@ -4,6 +4,8 @@ Submission for Flutter Puzzle Hack.
 
 ## Working Demo: https://objective-haibt-b724bd.netlify.app/
 
+## Download on Google Play Store: play.google.com/store/apps/details?id=com.slidepuzzle.slidepuzzle
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
