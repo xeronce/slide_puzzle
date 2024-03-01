@@ -209,23 +209,23 @@ class _PictureModeState extends State<PictureMode> with TickerProviderStateMixin
 
   void _tap(int row, int col) async {
     int actualCol = (_margins[row][col].value[0] == 0)
-            ? 0
-            : (_margins[row][col].value[0] == _movement)
-                ? 1
-                : (_margins[row][col].value[0] == (_movement * 2))
-                    ? 2
-                    : (_margins[row][col].value[0] == (_movement * 3))
-                        ? 3
-                        : -1,
+        ? 0
+        : (_margins[row][col].value[0] == _movement)
+        ? 1
+        : (_margins[row][col].value[0] == (_movement * 2))
+        ? 2
+        : (_margins[row][col].value[0] == (_movement * 3))
+        ? 3
+        : -1,
         actualRow = (_margins[row][col].value[1] == 0)
             ? 0
             : (_margins[row][col].value[1] == _movement)
-                ? 1
-                : (_margins[row][col].value[1] == (_movement * 2))
-                    ? 2
-                    : (_margins[row][col].value[1] == (_movement * 3))
-                        ? 3
-                        : -1;
+            ? 1
+            : (_margins[row][col].value[1] == (_movement * 2))
+            ? 2
+            : (_margins[row][col].value[1] == (_movement * 3))
+            ? 3
+            : -1;
     if (actualCol == _blankPosition[1] || actualRow == _blankPosition[0]) {
       List<int> oldBlankPosition = <int>[_blankPosition[0], _blankPosition[1]];
       _blankPosition[0] = actualRow;
@@ -236,21 +236,21 @@ class _PictureModeState extends State<PictureMode> with TickerProviderStateMixin
           int _column = (_margins[i][j].value[0] == 0)
               ? 0
               : (_margins[i][j].value[0] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[0] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[0] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[0] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[0] == (_movement * 3))
+              ? 3
+              : -1;
           int _row = (_margins[i][j].value[1] == 0)
               ? 0
               : (_margins[i][j].value[1] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[1] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[1] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[1] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[1] == (_movement * 3))
+              ? 3
+              : -1;
           if (actualCol == oldBlankPosition[1]) {
             // SAME COLUMN
             if (actualRow < oldBlankPosition[0]) {
@@ -285,21 +285,21 @@ class _PictureModeState extends State<PictureMode> with TickerProviderStateMixin
           _column = (_margins[i][j].value[0] == 0)
               ? 0
               : (_margins[i][j].value[0] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[0] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[0] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[0] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[0] == (_movement * 3))
+              ? 3
+              : -1;
           _row = (_margins[i][j].value[1] == 0)
               ? 0
               : (_margins[i][j].value[1] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[1] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[1] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[1] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[1] == (_movement * 3))
+              ? 3
+              : -1;
           if (((_column + 1) + (_row * 4)) == _items[i][j]) {
             cnt++;
           }
@@ -357,41 +357,41 @@ class _PictureModeState extends State<PictureMode> with TickerProviderStateMixin
                         ),
                         title: (_moveCnt.value < _bestScore)
                             ? const Text(
-                                'Congratulations! New best score!',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 20.0),
-                              )
+                          'Congratulations! New best score!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20.0),
+                        )
                             : const Text(
-                                'Congratulations!',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 20.0),
-                              ),
+                          'Congratulations!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20.0),
+                        ),
                         content: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Text>[
                               (_moveCnt.value < _bestScore)
                                   ? const Text(
-                                      'You solved the puzzle with a new record!\n',
-                                      style: TextStyle(fontSize: 20.0),
-                                    )
+                                'You solved the puzzle with a new record!\n',
+                                style: TextStyle(fontSize: 20.0),
+                              )
                                   : const Text(
-                                      'You solved the puzzle!\n',
-                                      style: TextStyle(fontSize: 20.0),
-                                    ),
+                                'You solved the puzzle!\n',
+                                style: TextStyle(fontSize: 20.0),
+                              ),
                               Text(
                                 'Score: ${_moveCnt.value} moves.\n',
                                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600, color: Colors.grey.shade800),
                               ),
                               (_bestScore == -1)
                                   ? const Text(
-                                      'No best score.\n',
-                                      style: TextStyle(fontSize: 20.0),
-                                    )
+                                'No best score.\n',
+                                style: TextStyle(fontSize: 20.0),
+                              )
                                   : Text(
-                                      'Best score: $_bestScore moves.\n',
-                                      style: const TextStyle(fontSize: 20.0),
-                                    ),
+                                'Best score: $_bestScore moves.\n',
+                                style: const TextStyle(fontSize: 20.0),
+                              ),
                             ],
                           ),
                         ),
@@ -588,7 +588,7 @@ class _PictureModeState extends State<PictureMode> with TickerProviderStateMixin
                 Container(
                   padding: EdgeInsets.all(_size / 60),
                   decoration:
-                      const ShapeDecoration(color: Colors.black38, shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(96.0)))),
+                  const ShapeDecoration(color: Colors.black38, shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(96.0)))),
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.center,

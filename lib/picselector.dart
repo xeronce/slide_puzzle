@@ -1,6 +1,7 @@
-import 'dart:html';
+
 import 'dart:math';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:slide_puzzle_by_ercan/picturemode.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -72,7 +73,8 @@ class _PicSelectorState extends State<PicSelector> {
                         setState(() {});
                       });
                     });
-                    document.documentElement?.requestFullscreen();
+                    // document.documentElement?.requestFullscreen();
+                    SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: SystemUiOverlay.values);
                   },
                   child: Stack(
                     children: <Widget>[

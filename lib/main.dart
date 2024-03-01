@@ -1,4 +1,4 @@
-import 'dart:html';
+
 import 'dart:math';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -80,7 +80,8 @@ class _MyAppState extends State<MyApp> {
                   setState(() {});
                 });
               });
-              document.documentElement?.requestFullscreen();
+              // document.documentElement?.requestFullscreen();
+              SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: SystemUiOverlay.values);
             },
             icon: const Icon(CupertinoIcons.lab_flask_solid),
             label: const Text(
@@ -119,7 +120,9 @@ class _MyAppState extends State<MyApp> {
                               setState(() {});
                             });
                           });
-                          document.documentElement?.requestFullscreen();
+                          // document.documentElement?.requestFullscreen();
+                          SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge, overlays: SystemUiOverlay.values);
+
                         },
                         onHover: (bool a) {
                           if (a) {

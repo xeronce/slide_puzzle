@@ -18,17 +18,17 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
   late int _colorCnt, _bestScore = -1, _size = 960, _movement = 160, _chronometerValue = 0, _centerSquareDimension = 0;
   final ValueNotifier<int> _moveCnt = ValueNotifier<int>(0), _inPosition = ValueNotifier<int>(0);
   final List<Color> _colors = <Color>[
-        Colors.redAccent.shade400,
-        Colors.blueAccent.shade400,
-        Colors.deepOrangeAccent.shade400,
-        Colors.lightGreenAccent.shade400,
-        Colors.pinkAccent.shade400,
-        Colors.purpleAccent.shade400,
-        Colors.greenAccent.shade400,
-        //Colors.pink.shade400,
-        Colors.tealAccent.shade400,
-        const Color(0xFFFF9100)
-      ],
+    Colors.redAccent.shade400,
+    Colors.blueAccent.shade400,
+    Colors.deepOrangeAccent.shade400,
+    Colors.lightGreenAccent.shade400,
+    Colors.pinkAccent.shade400,
+    Colors.purpleAccent.shade400,
+    Colors.greenAccent.shade400,
+    //Colors.pink.shade400,
+    Colors.tealAccent.shade400,
+    const Color(0xFFFF9100)
+  ],
       _secondaryColors = <Color>[
         HSLColor.fromColor(Colors.redAccent.shade400).withLightness(HSLColor.fromColor(Colors.redAccent.shade400).lightness * (0.85)).toColor(),
         HSLColor.fromColor(Colors.blueAccent.shade400).withLightness(HSLColor.fromColor(Colors.blueAccent.shade400).lightness * (0.85)).toColor(),
@@ -287,23 +287,23 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
 
   void _tap(int row, int col) async {
     int actualCol = (_margins[row][col].value[0] == 0)
-            ? 0
-            : (_margins[row][col].value[0] == _movement)
-                ? 1
-                : (_margins[row][col].value[0] == (_movement * 2))
-                    ? 2
-                    : (_margins[row][col].value[0] == (_movement * 3))
-                        ? 3
-                        : -1,
+        ? 0
+        : (_margins[row][col].value[0] == _movement)
+        ? 1
+        : (_margins[row][col].value[0] == (_movement * 2))
+        ? 2
+        : (_margins[row][col].value[0] == (_movement * 3))
+        ? 3
+        : -1,
         actualRow = (_margins[row][col].value[1] == 0)
             ? 0
             : (_margins[row][col].value[1] == _movement)
-                ? 1
-                : (_margins[row][col].value[1] == (_movement * 2))
-                    ? 2
-                    : (_margins[row][col].value[1] == (_movement * 3))
-                        ? 3
-                        : -1;
+            ? 1
+            : (_margins[row][col].value[1] == (_movement * 2))
+            ? 2
+            : (_margins[row][col].value[1] == (_movement * 3))
+            ? 3
+            : -1;
     if (actualCol == _blankPosition[1] || actualRow == _blankPosition[0]) {
       List<int> oldBlankPosition = <int>[_blankPosition[0], _blankPosition[1]];
       _blankPosition[0] = actualRow;
@@ -314,21 +314,21 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
           int _column = (_margins[i][j].value[0] == 0)
               ? 0
               : (_margins[i][j].value[0] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[0] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[0] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[0] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[0] == (_movement * 3))
+              ? 3
+              : -1;
           int _row = (_margins[i][j].value[1] == 0)
               ? 0
               : (_margins[i][j].value[1] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[1] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[1] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[1] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[1] == (_movement * 3))
+              ? 3
+              : -1;
           if (actualCol == oldBlankPosition[1]) {
             // SAME COLUMN
             if (actualRow < oldBlankPosition[0]) {
@@ -363,21 +363,21 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
           _column = (_margins[i][j].value[0] == 0)
               ? 0
               : (_margins[i][j].value[0] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[0] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[0] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[0] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[0] == (_movement * 3))
+              ? 3
+              : -1;
           _row = (_margins[i][j].value[1] == 0)
               ? 0
               : (_margins[i][j].value[1] == _movement)
-                  ? 1
-                  : (_margins[i][j].value[1] == (_movement * 2))
-                      ? 2
-                      : (_margins[i][j].value[1] == (_movement * 3))
-                          ? 3
-                          : -1;
+              ? 1
+              : (_margins[i][j].value[1] == (_movement * 2))
+              ? 2
+              : (_margins[i][j].value[1] == (_movement * 3))
+              ? 3
+              : -1;
           if (((_column + 1) + (_row * 4)) == _items[i][j]) {
             cnt++;
           }
@@ -450,41 +450,41 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
                         ),
                         title: (_moveCnt.value < _bestScore)
                             ? const Text(
-                                'Congratulations! New best score!',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 20.0),
-                              )
+                          'Congratulations! New best score!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20.0),
+                        )
                             : const Text(
-                                'Congratulations!',
-                                textAlign: TextAlign.center,
-                                style: TextStyle(fontSize: 20.0),
-                              ),
+                          'Congratulations!',
+                          textAlign: TextAlign.center,
+                          style: TextStyle(fontSize: 20.0),
+                        ),
                         content: SingleChildScrollView(
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: <Text>[
                               (_moveCnt.value < _bestScore)
                                   ? const Text(
-                                      'You solved the puzzle with a new record!\n',
-                                      style: TextStyle(fontSize: 20.0),
-                                    )
+                                'You solved the puzzle with a new record!\n',
+                                style: TextStyle(fontSize: 20.0),
+                              )
                                   : const Text(
-                                      'You solved the puzzle!\n',
-                                      style: TextStyle(fontSize: 20.0),
-                                    ),
+                                'You solved the puzzle!\n',
+                                style: TextStyle(fontSize: 20.0),
+                              ),
                               Text(
                                 'Score: ${_moveCnt.value} moves.\n',
                                 style: TextStyle(fontSize: 24.0, fontWeight: FontWeight.w600, color: Colors.grey.shade800),
                               ),
                               (_bestScore == -1)
                                   ? const Text(
-                                      'No best score.\n',
-                                      style: TextStyle(fontSize: 20.0),
-                                    )
+                                'No best score.\n',
+                                style: TextStyle(fontSize: 20.0),
+                              )
                                   : Text(
-                                      'Best score: $_bestScore moves.\n',
-                                      style: const TextStyle(fontSize: 20.0),
-                                    ),
+                                'Best score: $_bestScore moves.\n',
+                                style: const TextStyle(fontSize: 20.0),
+                              ),
                             ],
                           ),
                         ),
@@ -587,13 +587,13 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
                 end: Alignment.bottomRight,
                 colors: (_medium == Colors.grey.shade900)
                     ? <Color>[
-                        HSLColor.fromColor(Colors.grey.shade900).withLightness(HSLColor.fromColor(Colors.grey.shade900).lightness * (1.15)).toColor(),
-                        Colors.grey.shade900,
-                      ]
+                  HSLColor.fromColor(Colors.grey.shade900).withLightness(HSLColor.fromColor(Colors.grey.shade900).lightness * (1.15)).toColor(),
+                  Colors.grey.shade900,
+                ]
                     : <Color>[
-                        const Color(0xFFE0E0E0),
-                        HSLColor.fromColor(const Color(0xFFE0E0E0)).withLightness(HSLColor.fromColor(const Color(0xFFE0E0E0)).lightness * (0.85)).toColor(),
-                      ],
+                  const Color(0xFFE0E0E0),
+                  HSLColor.fromColor(const Color(0xFFE0E0E0)).withLightness(HSLColor.fromColor(const Color(0xFFE0E0E0)).lightness * (0.85)).toColor(),
+                ],
               ),
             ),
           ),
@@ -685,13 +685,13 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
                 iconTheme: IconThemeData(color: _complement),
                 systemOverlayStyle: (_medium == Colors.grey.shade900)
                     ? SystemUiOverlayStyle.light.copyWith(
-                        statusBarColor: Colors.transparent,
-                        systemNavigationBarColor: Colors.transparent,
-                      )
+                  statusBarColor: Colors.transparent,
+                  systemNavigationBarColor: Colors.transparent,
+                )
                     : SystemUiOverlayStyle.dark.copyWith(
-                        statusBarColor: Colors.transparent,
-                        systemNavigationBarColor: Colors.transparent,
-                      ),
+                  statusBarColor: Colors.transparent,
+                  systemNavigationBarColor: Colors.transparent,
+                ),
                 bottom: PreferredSize(
                     preferredSize: const Size.fromHeight(16.0),
                     child: ValueListenableBuilder<int>(
@@ -733,7 +733,7 @@ class _NumberModeState extends State<NumberMode> with TickerProviderStateMixin {
                   Container(
                     padding: EdgeInsets.all(_textFontSize / 5),
                     decoration:
-                        ShapeDecoration(color: _colors[_colorCnt], shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(96.0)))),
+                    ShapeDecoration(color: _colors[_colorCnt], shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(96.0)))),
                     child: Row(
                       crossAxisAlignment: CrossAxisAlignment.center,
                       mainAxisAlignment: MainAxisAlignment.center,
